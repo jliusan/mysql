@@ -1,0 +1,2 @@
+# mysql
+daily used sql
