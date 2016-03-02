@@ -1,0 +1,16 @@
+change mysql datadir on  ubuntu  is different from centos,and it is relatively difficult than the later.Steps as follow:
+
+step 1: mkdir -P /data/mysql
+
+step 2: cp -R /var/lib/mysql/* /data/mysql
+
+step 3: chown -R mysql:mysql /data/mysql
+
+step 4: vim /etc/mysql/my.cnf
+        datadir = /data/mysql
+step 5: vim /etc/apparmor.d/usr.sbin.mysqld
+        /var/lib/mysql *r  => /data/mysql *r
+        /var/lib/mysql/** rwk => /data/mysql/** rwk
+step 6: restart server
+        /etc/init.d/apparmor restart
+        /etc/init.d/mysql restart 
