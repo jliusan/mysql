@@ -27,3 +27,15 @@ step 3: chown -R mysql:mysql /data/mysql
 
 step 4: /etc/init.d/mysql restart 
 
+
+
+when it's over ,check whether it is ok :
+        df -h
+result is like this:
+        /dev/mapper/VolGroup-lv_root
+                               50G   36G   12G  76% /
+        tmpfs                 3.9G  160K  3.9G   1% /dev/shm
+        /dev/sda1             485M   74M  386M  17% /boot
+        /dev/sda3             197G  181G  6.8G  97% /home
+
+
